@@ -1,11 +1,11 @@
 # Site settings
 title: .
-SEOTitle: Yukang Chen | 陈玉康
+SEOTitle: Hongbo Zhao | 赵宏博
 header-img: img/a.jpeg
-email: yukangchen@cse.cuhk.edu.hk
+email: zhaohongbo@2022@ia.ac.cn
 description: "Aim High and Down to Earth"
 keyword: ""
-url: "https://yukangchen.com"              # your host, for absolute URL
+url: "https://bjzhb666.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
@@ -13,9 +13,9 @@ future: true
 
 # SNS settings
 zhihu_username:     kang-kang-74-24-60
-github_username:    yukang2017
-googlescholar_username:   6p0ygKUAAAAJ&hl
-linkedin_username:  玉康-陈-35aaa2151
+github_username:    bjzhb666
+googlescholar_username:   Gs22F0UAAAAJ&hl
+# linkedin_username:  玉康-陈-35aaa2151
 
 
 

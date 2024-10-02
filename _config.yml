@@ -1,7 +1,7 @@
 # Site settings
 title: .
 SEOTitle: Hongbo Zhao | 赵宏博
-header-img: img/a.jpeg
+header-img: img/view.jpg
 email: zhaohongbo@2022@ia.ac.cn
 description: "Aim High and Down to Earth"
 keyword: ""
@@ -12,7 +12,7 @@ baseurl: ""                             # for example, '/blog' if your blog host
 future: true
 
 # SNS settings
-zhihu_username:     kang-kang-74-24-60
+zhihu_username:     zhb-30-39
 github_username:    bjzhb666
 googlescholar_username:   Gs22F0UAAAAJ&hl
 # linkedin_username:  玉康-陈-35aaa2151

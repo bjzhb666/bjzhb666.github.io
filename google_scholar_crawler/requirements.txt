@@ -1,0 +1,3 @@
+scholarly
+httpx
+beautifulsoup4

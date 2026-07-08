@@ -18,7 +18,7 @@ redirect_from:
 
 Hello! I am a Ph.D student at [Institute of Automation, Chinese Academy of Sciences (CASIA)](http://www.ia.cas.cn/). Before that, I got B.Eng from Beijing Institute of Technology.
 
-My research interests mainly lie in **Post Training of Multimodal Large Language Models** (SFT, RLHF, RLVR, OPD), **Model Editing** (continual learning and machine unlearning), and **Computer Vision**. I have published papers at top AI conferences with total <a href='https://scholar.google.com/citations?user=Gs22F0UAAAAJ&hl=en'>Google Scholar citations <strong><span id='total_cit'>0+</span></strong></a> <a href='https://scholar.google.com/citations?user=Gs22F0UAAAAJ&hl=en'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
+My research interests mainly lie in **Post Training of Multimodal Large Language Models** (SFT, RLHF, RLVR, OPD), **Model Editing** (continual learning and machine unlearning), and **Computer Vision**.
 
 
 To know more about me, please visit my [Google Scholar](https://scholar.google.com/citations?user=Gs22F0UAAAAJ&hl=en) and [GitHub](https://github.com/bjzhb666). Any discussion is welcome via [E-mail](mailto:zhaohongbo2022@ia.ac.cn).

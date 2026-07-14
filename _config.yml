@@ -2,7 +2,6 @@
 title                    : "Hongbo Zhao (赵宏博)"
 description              : "Ph.D student at Institute of Automation, Chinese Academy of Sciences (CASIA). Research interests include Model Editing, Multimodal Large Language Models, and Computer Vision."
 repository               : "bjzhb666/bjzhb666.github.io"
-google_scholar_stats_use_cdn : true
 
 # google analytics
 google_analytics_id      :
@@ -59,7 +58,6 @@ include:
   - files
 exclude:
   - docs
-  - google_scholar_crawler
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

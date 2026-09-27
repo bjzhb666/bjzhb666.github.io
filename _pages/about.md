@@ -17,7 +17,7 @@ My research interests mainly lie in **Post Training of Multimodal Large Language
 To know more about me, please visit my [Google Scholar](https://scholar.google.com/citations?user=Gs22F0UAAAAJ&hl=en) and [GitHub](https://github.com/bjzhb666). Any discussion is welcome via [E-mail](mailto:zhaohongbo2022@ia.ac.cn).
 
 # 🔥 News
-
+- *2026.01*: &nbsp;🎉🎉 [VTCBench](https://arxiv.org/abs/2512.15649) is accepted by **EMNLP 2026 Main**.
 - *2026.01*: &nbsp;🎉🎉 [Practical Continual Forgetting](https://arxiv.org/abs/2501.09705) is accepted by **IEEE T-PAMI 2026**!
 - *2025.06*: &nbsp;🎉🎉 [MLLM-CL](https://arxiv.org/abs/2506.05453) is released, a benchmark for continual learning in multimodal large language models. [[Code](https://github.com/bjzhb666/MLLM-CL)]
 - *2025.02*: &nbsp;🎉🎉 [MRS Sampler](https://arxiv.org/abs/2502.07856) is accepted by **ICLR 2025** as a **spotlight**!
@@ -75,6 +75,19 @@ To know more about me, please visit my [Google Scholar](https://scholar.google.c
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">EMNLP 2026</div><img src='images/vtcbench.png' alt="VTCBench" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[VTCBench: Can Vision-Language Models Understand Long Context with Vision-Text Compression?](https://arxiv.org/abs/2512.15649)
+
+**Hongbo Zhao**, Meng Wang, Fei Zhu, Wenzhuo Liu, Bolin Ni, Fanhu Zeng, Gaofeng Meng, Zhaoxiang Zhang
+
+*EMNLP, 2026, Main*
+
+[**Paper**](https://arxiv.org/abs/2512.15649)
+
+</div>
+</div>
 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">ICLR 2025 Spotlight</div><img src='images/mrs_sampler.png' alt="MRS Sampler" width="100%"></div></div>
@@ -140,19 +153,7 @@ Song Lai, Haohan Zhao, Rong Feng, Changyi Ma, Wenzhuo Liu, **Hongbo Zhao**, Xi L
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/vtcbench.png' alt="VTCBench" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
 
-[VTCBench: Can Vision-Language Models Understand Long Context with Vision-Text Compression?](https://arxiv.org/abs/2512.15649)
-
-**Hongbo Zhao**, Meng Wang, Fei Zhu, Wenzhuo Liu, Bolin Ni, Fanhu Zeng, Gaofeng Meng, Zhaoxiang Zhang
-
-*arXiv preprint, 2025*
-
-[**Paper**](https://arxiv.org/abs/2512.15649)
-
-</div>
-</div>
 
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Preprint</div><img src='images/mcitlib.png' alt="MCITLib" width="100%"></div></div>

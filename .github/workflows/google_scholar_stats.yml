@@ -2,7 +2,7 @@ name: Update Google Scholar Stats
 
 on:
   schedule:
-    - cron: "0 2 * * *"
+    - cron: "0 2 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -12,14 +12,14 @@ jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
-      - name: Fetch stats from SerpAPI and publish to google-scholar-stats branch
+      - name: Fetch stats from SearchApi.io and publish to google-scholar-stats branch
         env:
-          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          SEARCHAPI_KEY: ${{ secrets.SEARCHAPI_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AUTHOR_ID: Gs22F0UAAAAJ
         run: |
-          if [ -z "$SERPAPI_KEY" ]; then
-            echo "::warning::SERPAPI_KEY secret is not set, skipping."
+          if [ -z "$SEARCHAPI_KEY" ]; then
+            echo "::warning::SEARCHAPI_KEY secret is not set, skipping."
             exit 0
           fi
 
@@ -31,20 +31,20 @@ jobs:
           query = urllib.parse.urlencode({
               "engine": "google_scholar_author",
               "author_id": os.environ["AUTHOR_ID"],
-              "api_key": os.environ["SERPAPI_KEY"],
+              "api_key": os.environ["SEARCHAPI_KEY"],
               "hl": "en",
           })
-          with urllib.request.urlopen("https://serpapi.com/search.json?" + query, timeout=60) as resp:
+          with urllib.request.urlopen("https://www.searchapi.io/api/v1/search?" + query, timeout=60) as resp:
               data = json.load(resp)
           if "error" in data:
-              raise SystemExit("SerpAPI error: " + data["error"])
+              raise SystemExit("SearchApi.io error: " + str(data["error"]))
 
-          stats = {k: v for row in data["cited_by"]["table"] for k, v in row.items()}
-          citations = stats["citations"]["all"]
+          stats = {row[0]: int(row[1]) for row in data["cited_by"]["table"]["rows"]}
+          citations = stats["Citations"]
           gs_data = {
               "citations": citations,
-              "h_index": stats.get("h_index", {}).get("all"),
-              "i10_index": stats.get("i10_index", {}).get("all"),
+              "h_index": stats.get("h-index"),
+              "i10_index": stats.get("i10-index"),
               "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
           }
           shields = {"schemaVersion": 1, "label": "citations", "message": str(citations)}

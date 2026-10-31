@@ -1,0 +1,62 @@
+name: Update Google Scholar Stats
+
+on:
+  schedule:
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch stats from SerpAPI and publish to google-scholar-stats branch
+        env:
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AUTHOR_ID: Gs22F0UAAAAJ
+        run: |
+          if [ -z "$SERPAPI_KEY" ]; then
+            echo "::warning::SERPAPI_KEY secret is not set, skipping."
+            exit 0
+          fi
+
+          mkdir out && cd out
+          python3 - <<'EOF'
+          import json, os, urllib.parse, urllib.request
+          from datetime import datetime, timezone
+
+          query = urllib.parse.urlencode({
+              "engine": "google_scholar_author",
+              "author_id": os.environ["AUTHOR_ID"],
+              "api_key": os.environ["SERPAPI_KEY"],
+              "hl": "en",
+          })
+          with urllib.request.urlopen("https://serpapi.com/search.json?" + query, timeout=60) as resp:
+              data = json.load(resp)
+          if "error" in data:
+              raise SystemExit("SerpAPI error: " + data["error"])
+
+          stats = {k: v for row in data["cited_by"]["table"] for k, v in row.items()}
+          citations = stats["citations"]["all"]
+          gs_data = {
+              "citations": citations,
+              "h_index": stats.get("h_index", {}).get("all"),
+              "i10_index": stats.get("i10_index", {}).get("all"),
+              "updated": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+          }
+          shields = {"schemaVersion": 1, "label": "citations", "message": str(citations)}
+
+          json.dump(gs_data, open("gs_data.json", "w"), indent=2)
+          json.dump(shields, open("gs_data_shieldsio.json", "w"))
+          print(gs_data)
+          EOF
+
+          git init -q -b google-scholar-stats
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gs_data.json gs_data_shieldsio.json
+          git commit -q -m "Update Google Scholar stats"
+          git push -q --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" google-scholar-stats
